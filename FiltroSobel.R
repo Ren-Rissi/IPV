@@ -1,13 +1,16 @@
-library("jpeg")
-library("squash")
+library(funr)
+library(jpeg)
+library(squash)
 
-img1 <- "C:/Users/Renato Rissi/Documents/PIV/Minami.jpg"
-img2 <- "C:/Users/Renato Rissi/Documents/PIV/Veneza.jpg"
-img3 <- "C:/Users/Renato Rissi/Documents/PIV/Outono.jpg"
-img4 <- "C:/Users/Renato Rissi/Documents/PIV/Rosto.jpg"
-img5 <- "C:/Users/Renato Rissi/Documents/PIV/Zebra.jpg"
-img6 <- "C:/Users/Renato Rissi/Documents/PIV/Sol.jpg"
-img7 <- "C:/Users/Renato Rissi/Documents/PIV/Pisa.jpg"
+diretorio <- funr::detect_home()
+
+img1 <- "Minami.jpg"
+img2 <- "Veneza.jpg"
+img3 <- "Outono.jpg"
+img4 <- "Rosto.jpg"
+img5 <- "Zebra.jpg"
+img6 <- "Sol.jpg"
+img7 <- "Pisa.jpg"
 
 
 
@@ -119,8 +122,7 @@ apl <- function(mask, A){
 sob <- sobel(img1)
 
 img <- apl(hori,sob)
-writeJPEG(img, target = "C:/Users/Renato Rissi/Documents/PIV/Minami_out.jpg", quality = 1, bg = "white")
+writeJPEG(img, target = "Minami_out.jpg", quality = 1, bg = "white")
 
     plot(0:1,0:1,type="n",ann=FALSE,axes=FALSE)
     rasterImage(img,0,0,1,1)
-
